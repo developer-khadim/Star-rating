@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaStar, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const StarRating = ({ noOfStars = 5 }) => {
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
+
+    useEffect(() => {
+        setRating(0);
+    }, []);
 
     const handleClick = (getCurrentIndex) => {
         setRating(getCurrentIndex);
@@ -31,7 +35,7 @@ const StarRating = ({ noOfStars = 5 }) => {
         ))}
       </div>
       <div className='flex gap-4 mt-10'>
-        <a href="https://github.com/yourgithubusername" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/developer-khadim" target="_blank" rel="noopener noreferrer">
           <FaGithub className={`text-white ${window.innerWidth > 768 ? 'text-4xl' : 'text-3xl'}`} />
         </a>
         <a href="https:www.linkedin.com/in/khadim-ali12" target="_blank" rel="noopener noreferrer">
